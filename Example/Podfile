@@ -1,0 +1,4 @@
+platform :ios, '7.0'
+
+pod 'NBJNibBasedView-ObjC', :path => '../'
+pod 'NBJMergeLayout-ObjC', '~> 1.0.0'
