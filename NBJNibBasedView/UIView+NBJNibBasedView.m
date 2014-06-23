@@ -78,9 +78,21 @@
             translatesAutoresizingMaskIntoConstraints = NO;
         }
         
-        UIView *rootSubview = [[[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil] firstObject];
-        rootSubview.translatesAutoresizingMaskIntoConstraints = translatesAutoresizingMaskIntoConstraints;
-        [self addSubview:rootSubview];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil];
+        // Find the first view that's a top level object
+        UIView *rootSubview = nil;
+        for (id object in topLevelObjects) {
+            if ([object isKindOfClass:[UIView class]]) {
+                rootSubview = object;
+                break;
+            }
+        }
+        
+        // If we found a view, add it as our subview
+        if (rootSubview) {
+            rootSubview.translatesAutoresizingMaskIntoConstraints = translatesAutoresizingMaskIntoConstraints;
+            [self addSubview:rootSubview];
+        }
     }
 }
 
