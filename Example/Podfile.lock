@@ -1,9 +1,9 @@
 PODS:
-  - NBJMergeLayout-ObjC (1.0.0)
+  - NBJMergeLayout-ObjC (1.0.1)
   - NBJNibBasedView-ObjC (1.0.0)
 
 DEPENDENCIES:
-  - NBJMergeLayout-ObjC (~> 1.0.0)
+  - NBJMergeLayout-ObjC (~> 1.0.1)
   - NBJNibBasedView-ObjC (from `../`)
 
 EXTERNAL SOURCES:
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  NBJMergeLayout-ObjC: 734bd7eb6a00e7715bad0380a8518a8646bac87b
-  NBJNibBasedView-ObjC: 73141accbfe533b12039105223fdf1fc2a66d8d8
+  NBJMergeLayout-ObjC: 03bef73ee9bff74d9cc0ccfd2c0083d183359cf7
+  NBJNibBasedView-ObjC: fd01402902edca218944e3ad31b5f0ca690f7bdd
 
 COCOAPODS: 0.33.1

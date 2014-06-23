@@ -1,4 +1,17 @@
-platform :ios, '7.0'
+workspace 'NBJNibBasedView-ObjC-Example'
+xcodeproj 'NBJNibBasedView-ObjC-iOS-Example.xcodeproj'
+xcodeproj 'NBJNibBasedView-ObjC-OSX-Example.xcodeproj'
 
-pod 'NBJNibBasedView-ObjC', :path => '../'
-pod 'NBJMergeLayout-ObjC', '~> 1.0.0'
+target :'NBJNibBasedView-ObjC-iOS-Example' do
+    platform :ios, '7.0'
+    pod 'NBJNibBasedView-ObjC', :path => '../'
+    pod 'NBJMergeLayout-ObjC', '~> 1.0.1'
+    xcodeproj 'NBJNibBasedView-ObjC-iOS-Example.xcodeproj'
+end
+
+target :'NBJNibBasedView-ObjC-OSX-Example' do
+    platform :osx, '10.9'
+    pod 'NBJNibBasedView-ObjC', :path => '../'
+    pod 'NBJMergeLayout-ObjC', '~> 1.0.1'
+    xcodeproj 'NBJNibBasedView-ObjC-OSX-Example.xcodeproj'
+end

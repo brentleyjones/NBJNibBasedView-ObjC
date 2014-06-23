@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:NBJNibBasedView-ObjC-Example.xcodeproj">
+      location = "self:NBJNibBasedView-ObjC-iOS-Example.xcodeproj">
    </FileRef>
 </Workspace>

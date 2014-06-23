@@ -47,11 +47,14 @@
     for (NSLayoutConstraint *constraint in self.constraints) {
         NSLayoutConstraint *newConstraint = [self constraintForSuperviewConstraint:constraint withNewSuperview:newSuperview];
         
-        [self.superview addConstraint:newConstraint];
+        [newSuperview addConstraint:newConstraint];
     }
     
     // Secondly we move the views over to our new superview
-    for (id subview in self.subviews) {
+    // Copy needed or OS X complains about mutating the array
+    // (since we are technically removing the views by adding them to the superview)
+    NSArray *subviews = [self.subviews copy];
+    for (id subview in subviews) {
         [newSuperview addSubview:subview];
     }
 }

@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_NBJNibBasedView_ObjC_iOS_Example_NBJNibBasedView_ObjC : NSObject
+@end
+@implementation PodsDummy_Pods_NBJNibBasedView_ObjC_iOS_Example_NBJNibBasedView_ObjC
+@end
