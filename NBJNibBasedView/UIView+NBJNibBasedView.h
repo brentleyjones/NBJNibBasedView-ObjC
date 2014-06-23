@@ -6,8 +6,20 @@
 //  Copyright (c) 2014 Brentley Jones. All rights reserved.
 //
 
-@import UIKit;
+#include "TargetConditionals.h"
 
-@interface UIView (NBJNibBasedView)
+#if TARGET_OS_IPHONE
+
+@import UIKit;
+#define View UIView
+
+#else
+
+@import AppKit;
+#define View NSView
+
+#endif
+
+@interface View (NBJNibBasedView)
 
 @end

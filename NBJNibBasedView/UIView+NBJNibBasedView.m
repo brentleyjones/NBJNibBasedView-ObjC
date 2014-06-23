@@ -11,7 +11,13 @@
 #import <objc/runtime.h>
 #import "NBJNibBasedView.h"
 
-@implementation UIView (NBJNibBasedView)
+#if TARGET_OS_IPHONE
+#define Rect CGRect
+#else
+#define Rect NSRect
+#endif
+
+@implementation View (NBJNibBasedView)
 
 + (void)load
 {
@@ -48,7 +54,7 @@
     return retSelf;
 }
 
-- (instancetype)nbj_initWithFrame:(CGRect)frame
+- (instancetype)nbj_initWithFrame:(Rect)frame
 {
     id retSelf = [self nbj_initWithFrame:frame];
     if (retSelf) {
@@ -78,11 +84,16 @@
             translatesAutoresizingMaskIntoConstraints = NO;
         }
         
+#if TARGET_OS_IPHONE
         NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil];
+#else
+        NSArray *topLevelObjects = nil;
+        [[NSBundle mainBundle] loadNibNamed:nibName owner:self topLevelObjects:&topLevelObjects];
+#endif
         // Find the first view that's a top level object
-        UIView *rootSubview = nil;
+        View *rootSubview = nil;
         for (id object in topLevelObjects) {
-            if ([object isKindOfClass:[UIView class]]) {
+            if ([object isKindOfClass:[View class]]) {
                 rootSubview = object;
                 break;
             }
