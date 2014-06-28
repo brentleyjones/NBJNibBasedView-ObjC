@@ -16,3 +16,5 @@ To customize how the view hierarchy is loaded implement any of the following `NB
   - Defaults to `NO`
 - `+ (NSString *)nibBasedViewNibName`
   - Defaults to the name of the class (so `CustomView` would load `CustomView.xib`)
+- `+ (NSBundle *)nibBasedViewBundle`
+  - Defaults to `[NSBundle bundleForClass:[self class]]`
