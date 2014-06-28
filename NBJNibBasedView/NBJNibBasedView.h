@@ -33,4 +33,7 @@
 @optional
 + (NSString *)nibBasedViewNibName;
 
+@optional
++ (NSBundle *)nibBasedViewBundle;
+
 @end

@@ -84,11 +84,19 @@
             translatesAutoresizingMaskIntoConstraints = NO;
         }
         
+        NSBundle *bundle;
+        if ([class respondsToSelector:@selector(nibBasedViewBundle)]) {
+            bundle = [class nibBasedViewBundle];
+        } else {
+            // Dynamically determine bundle since the class might be in a framework
+            bundle = [NSBundle bundleForClass:class];
+        }
+        
 #if TARGET_OS_IPHONE
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil];
+        NSArray *topLevelObjects = [bundle loadNibNamed:nibName owner:self options:nil];
 #else
         NSArray *topLevelObjects = nil;
-        [[NSBundle mainBundle] loadNibNamed:nibName owner:self topLevelObjects:&topLevelObjects];
+        [bundle loadNibNamed:nibName owner:self topLevelObjects:&topLevelObjects];
 #endif
         // Find the first view that's a top level object
         View *rootSubview = nil;
