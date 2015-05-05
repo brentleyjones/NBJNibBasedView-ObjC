@@ -1,0 +1,6 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/NBJMergeLayout-ObjC" "${PODS_ROOT}/Headers/Public/NBJNibBasedView-ObjC"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/NBJMergeLayout-ObjC" -isystem "${PODS_ROOT}/Headers/Public/NBJNibBasedView-ObjC"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-NBJNibBasedView-ObjC-OSX-Example-NBJMergeLayout-ObjC" -l"Pods-NBJNibBasedView-ObjC-OSX-Example-NBJNibBasedView-ObjC"
+OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+PODS_ROOT = ${SRCROOT}/Pods
