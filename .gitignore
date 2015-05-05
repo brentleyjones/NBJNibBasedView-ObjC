@@ -39,8 +39,8 @@
 #    from source-control, but YMMV
 
 *.lock
-!Podfile.lock
-!Pods/Manifest.lock
+!/**/Podfile.lock
+!/**/Pods/Manifest.lock
 
 #
 # profile - REMOVED temporarily (on double-checking, this seems incorrect; I can't find it in OS X docs?)
