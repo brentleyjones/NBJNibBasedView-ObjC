@@ -74,7 +74,8 @@
         if ([class respondsToSelector:@selector(nibBasedViewNibName)]) {
             nibName = [class nibBasedViewNibName];
         } else {
-            nibName = NSStringFromClass(class);
+            // Swift class names include namespace, so we must take the last part of the namespace
+            nibName = [[NSStringFromClass(class) componentsSeparatedByString:@"."] lastObject];
         }
         
         BOOL translatesAutoresizingMaskIntoConstraints;
